@@ -1,0 +1,49 @@
+#server:
+#  port: 9000
+#
+#
+#user:
+#  name: yom
+#  age: 18
+#  address: 0000
+#
+#arr:
+#  - java
+#  - c
+#  - c++
+
+#OSS
+aliyun:
+  oss:
+    endpoint : https://oss-cn-beijing.aliyuncs.com
+    bucketName: web-java-anli
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test01?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 20060819
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 10MB
+
+
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.example.demoproject01.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+##事务管理日志
+#logging:
+#  level:
+#    org.springframework.jdbc.support.JdbcTransactionManager: debug
+
+
+#配置文件的优先级：properties，yml,yaml
+#配置信息也可以通过Java系统属性和命令行参数进行配置，命令行参数优先级更高
+#外部的配置信息优先级高于三种配置文件
